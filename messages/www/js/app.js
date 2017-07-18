@@ -7,10 +7,10 @@ function config($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('home', {
 			url: '/',
-			templateUrl: 'views/home.html',
+			templateUrl: 'views/home/home.html',
 			controller: 'HomeController'
 		})
-	$urlRouterProvider.otherwise('/home')
+	$urlRouterProvider.otherwise('/')
 }
 
 app.run(run)
