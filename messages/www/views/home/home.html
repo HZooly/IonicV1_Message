@@ -1,24 +1,31 @@
-<ion-view title="Accueil">
+<ion-view title="Accueil" ng-controller="HomeController as home">
   <ion-content>
-    <div class="list card">
 
+    <!-- Card Template -->
+    <div class="list card">
+      <!-- Card Title -->
       <div class="item item-avatar">
         <!-- <img src="sample.jpg"> -->
         <h2>Title</h2>
         <p>DD/MM/YYYY</p>
       </div>
 
+      <!-- Card Content -->
       <div class="item item-body">
         <!-- <img class="full-image" src="sampleFull.jpg"> -->
         <p>
           This is a sample card, content will be here in the future !
         </p>
-        <p>
-          <a href="#" class="subdued">Mark as read</a>
-          <a href="#" class="subdued">Save as an image</a>
-        </p>
-      </div>
 
+        <!-- Action buttons -->
+        <button class="button button-outline button-positive button-small">
+              Mark as read
+        </button>
+        <button class="button button-outline button-royal button-small">
+              Save
+        </button>
+      </div>
     </div>
+
   </ion-content>
 </ion-view>
