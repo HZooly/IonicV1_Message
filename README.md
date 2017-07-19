@@ -41,6 +41,18 @@ Import some data structured like this :
 
 Status can be **open**, **close** or **archive**.
 
+## Status
+
+- 🖥 Working on local machine with `ionic serve` ✅
+
+- 📱 Working on iOS
+  - iOS 10.* ✅
+  - Tested on simulator ✅
+  - Tested on physical iPhone 7 ✅
+  - Old devices ❓
+
+- 📱 Not tested on Android ❓
+
 ## Contributors
 
 - Hugo Torzuoli
