@@ -1,4 +1,4 @@
-<ion-view title="Accueil" ng-controller="HomeController as home">
+<ion-view on-swipe-right="home.goArchive()" title="Accueil" ng-controller="HomeController as home">
   <ion-content>
 
     <div ng-repeat="data in data track by $index">
@@ -21,8 +21,8 @@
 
           <!-- Action buttons -->
           <!-- <button class="button button-outline  button-assertive button-small" ng-click="data.status = 'archive'"> -->
-          <button class="button button-outline  button-assertive button-small" ng-click="home.markAsRead($index)">
-                <i class="ion-checkmark-round"></i> Mark as read
+          <button class="button button-outline  button-assertive button-small" ng-click="home.markAsRead(data.id)">
+                <i class="ion-ios-download"></i> Archive
           </button>
         </div>
       </div>
@@ -45,7 +45,7 @@
           </p>
 
           <!-- Action buttons -->
-          <button class="button button-outline button-balanced button-small" ng-click="home.open($index)">
+          <button class="button button-outline button-balanced button-small" ng-click="home.open(data.id)">
                 <i class="ion-ios-plus-outline"></i> Open
           </button>
         </div>

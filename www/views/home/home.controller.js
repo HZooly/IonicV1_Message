@@ -1,8 +1,8 @@
 angular.module('messages').controller('HomeController', HomeController);
 
-HomeController.$inject = ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject'];
+HomeController.$inject = ['$scope', '$state', '$firebaseArray', '$firebaseObject'];
 
-function HomeController($scope, $stateParams, $firebaseArray, $firebaseObject) {
+function HomeController($scope, $state, $firebaseArray, $firebaseObject) {
 	var me = this;
 
 	////////////////
@@ -16,8 +16,13 @@ function HomeController($scope, $stateParams, $firebaseArray, $firebaseObject) {
 	me.init = init;
 	me.markAsRead = markAsRead;
 	me.open = open;
+	me.goArchive = goArchive;
 
-	function init(){
+	function goArchive() {
+		$state.go('archive');
+	}
+
+	function init() {
 		var ref = firebase.database().ref().child("messages");
 
 		me.list = $firebaseObject(ref);
@@ -32,7 +37,7 @@ function HomeController($scope, $stateParams, $firebaseArray, $firebaseObject) {
 		me.list.$save();
 	}
 
-	function open(messageId){
+	function open(messageId) {
 		me.list[messageId].status = 'open';
 		me.list.$save();
 	}

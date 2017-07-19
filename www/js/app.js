@@ -10,6 +10,11 @@ function config($stateProvider, $urlRouterProvider) {
 			templateUrl: 'views/home/home.html',
 			controller: 'HomeController'
 		})
+		.state('archive', {
+			url: '/archive',
+			templateUrl: 'views/archive/archive.html',
+			controller:'ArchiveController'
+		})
 	$urlRouterProvider.otherwise('/')
 }
 
