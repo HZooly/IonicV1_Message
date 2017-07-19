@@ -51,7 +51,7 @@ Status can be **open**, **close** or **archive**.
   - Tested on physical iPhone 7 ✅
   - Old devices ❓
 
-- 📱 Not tested on Android ❓
+- 📱 Working on Android ✅ `ionic build --prod android`
 
 ## Contributors
 
