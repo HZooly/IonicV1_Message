@@ -1,4 +1,4 @@
-var app = angular.module('messages', ['ionic'])
+var app = angular.module('messages', ['ionic', 'firebase'])
 
 app.config(config)
 config.$inject = ['$stateProvider', '$urlRouterProvider']

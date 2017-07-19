@@ -1,31 +1,58 @@
 <ion-view title="Accueil" ng-controller="HomeController as home">
   <ion-content>
 
-    <!-- Card Template -->
-    <div class="list card">
-      <!-- Card Title -->
-      <div class="item item-avatar">
-        <!-- <img src="sample.jpg"> -->
-        <h2>Title</h2>
-        <p>DD/MM/YYYY</p>
+    <div ng-repeat="data in data track by $index">
+      <!-- Card Template -->
+      <div class="list card" ng-if="data.status == 'open'">
+
+        <!-- Card Title -->
+        <div class="item item-avatar">
+          <!-- <img src="sample.jpg"> -->
+          <h2>{{data.title}}</h2>
+          <p>{{data.date}}</p>
+        </div>
+
+        <!-- Card Content -->
+        <div class="item item-body">
+          <!-- <img class="full-image" src="sampleFull.jpg"> -->
+          <p>
+            {{data.message}}
+          </p>
+
+          <!-- Action buttons -->
+          <!-- <button class="button button-outline  button-assertive button-small" ng-click="data.status = 'archive'"> -->
+          <button class="button button-outline  button-assertive button-small" ng-click="home.markAsRead($index)">
+                <i class="ion-checkmark-round"></i> Mark as read
+          </button>
+        </div>
       </div>
 
-      <!-- Card Content -->
-      <div class="item item-body">
-        <!-- <img class="full-image" src="sampleFull.jpg"> -->
-        <p>
-          This is a sample card, content will be here in the future !
-        </p>
+      <!-- Card Template -->
+      <div class="list card" ng-if="data.status == 'close'">
 
-        <!-- Action buttons -->
-        <button class="button button-outline button-positive button-small">
-              Mark as read
-        </button>
-        <button class="button button-outline button-royal button-small">
-              Save
-        </button>
+        <!-- Card Title -->
+        <div class="item item-avatar itemClose">
+          <!-- <img src="sample.jpg"> -->
+          <h2>?</h2>
+          <p>{{data.date}}</p>
+        </div>
+
+        <!-- Card Content -->
+        <div class="item item-body">
+          <!-- <img class="full-image" src="sampleFull.jpg"> -->
+          <p>
+            Want to open it ?
+          </p>
+
+          <!-- Action buttons -->
+          <button class="button button-outline button-balanced button-small" ng-click="home.open($index)">
+                <i class="ion-ios-plus-outline"></i> Open
+          </button>
+        </div>
       </div>
     </div>
+
+
 
   </ion-content>
 </ion-view>

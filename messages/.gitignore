@@ -6,3 +6,5 @@ platforms/
 plugins/
 .sass-cache/
 *.css.map
+
+firebase.js
