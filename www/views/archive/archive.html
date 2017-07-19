@@ -1,5 +1,5 @@
-<ion-view on-swipe-right="archive.goHome()" title="Archive" ng-controller="ArchiveController as archive">
-	<ion-content>
+<ion-view title="Archive">
+	<ion-content on-swipe-right="archive.goHome()" ng-controller="ArchiveController as archive">
 
 		<div ng-repeat="data in data track by $index">
 			<!-- Card Template -->
