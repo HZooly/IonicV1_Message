@@ -20,9 +20,12 @@
 					</p>
 
 					<!-- Action buttons -->
-					<button class="button button-outline  button-assertive button-small" ng-click="archive.markAsNonRead(data.id)">
+					<button class="button button-outline  button-positive button-small" ng-click="archive.markAsNonRead(data.id)">
                 <i class="ion-ios-download"></i> Unarchive
           </button>
+					<button class="button button-outline  button-assertive button-small" ng-click="archive.deleteMessage(data.id)">
+								<i class="ion-close-circled"></i> Delete
+					</button>
 				</div>
 			</div>
 		</div>

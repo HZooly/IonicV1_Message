@@ -8,6 +8,7 @@ function ArchiveController($scope, $state, $firebaseArray, $firebaseObject) {
 	me.goHome = goHome;
 	me.init = init;
 	me.markAsNonRead = markAsNonRead;
+	me.deleteMessage = deleteMessage;
 
 	function init() {
 		var ref = firebase.database().ref().child("messages");
@@ -25,9 +26,12 @@ function ArchiveController($scope, $state, $firebaseArray, $firebaseObject) {
 
 	function markAsNonRead(messageId) {
 		me.list[messageId].status = 'close';
-		me.list.$save().then(function(a){
-			console.log(a);
-		});
+		me.list.$save();
+	}
+
+	function deleteMessage(messageId){
+		me.list[messageId].status = 'delete';
+		me.list.$save();
 	}
 
 	init();
