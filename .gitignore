@@ -8,3 +8,5 @@ plugins/
 *.css.map
 
 firebase.js
+
+*.log
