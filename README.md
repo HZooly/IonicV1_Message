@@ -1,4 +1,4 @@
-# ionic_message
+# IonicV1_Message
 
 Mobile application built with Ionic v1.
 
